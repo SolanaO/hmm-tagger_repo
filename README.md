@@ -1,11 +1,12 @@
-This is the first project in the Natural Language Processing Nanodegree with Udacity.
+## Part of Speech Tagging
 
-## Description (Udacity)
+Part of speech tagging is the process of determining the syntactic category of a word from the words in its surrounding context. It is often used to help disambiguate natural language phrases because it can be done quickly with high accuracy. Tagging can be used for many NLP tasks such as for information retrieval or for word sense disambiguation.
 
-In this notebook, you'll use the [Pomegranate](https://github.com/jmschrei/pomegranate) library to build a hidden Markov model for part of speech tagging with a [universal tagset](http://www.petrovi.de/data/universal.pdf). Hidden Markov models have been able to achieve >96% tag accuracy with larger tagsets on realistic text corpora. Hidden Markov models have also been used for speech recognition and speech generation, machine translation, gene recognition for bioinformatics, and human gesture recognition for computer vision, and more.
+The project is built on a template provided by Udacity. The approach uses the _Pomegranate library_ to build a _Hidden Markov Model (HMM)_ for part of speech tagging using an 'universal' tag set. Hidden Markov models have been able to achieve more than 96% tag accuracy with larger tag sets on realistic text corpora. These models have also been used for speech recognition and speech generation, machine translation, and human gesture recognition for computer vision, and more.
 
-The notebook already contains some code to get you started. You only need to add some new functionality in the areas indicated to complete the project; you will not need to modify the included code beyond what is requested. Sections that begin with *'IMPLEMENTATION'* in the header indicate that you must provide code in the block that follows. Instructions will be provided for each section, and the specifics of the implementation are marked in the code block with a `'TODO'` statement. Please be sure to read the instructions carefully!
+There are two taggers constructed in this project. First a Most Frequent Class tagger to use as a baseline is built. A good baseline for tagger performance is to simply choose the tag most frequently assigned to each word. This 'most frequent class' tagger inspects each observed word in the sequence and assigns it the label that was most often assigned to that word in the corpus.
 
+The HMM tagger has one hidden state for each possible tag, and is parameterized by two distributions: the emission probabilities giving the conditional probability of observing a given word from each hidden state, and the transition probabilities giving the conditional probability of moving between tags during the sequence.
 
 
 
